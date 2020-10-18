@@ -1,5 +1,5 @@
 ~umpy==1.15.1
 streamlit==0.68.0
-matplotlib
+matplotlib==2.2.3
 pandas==1.0.3
 numpy==1.19.2
