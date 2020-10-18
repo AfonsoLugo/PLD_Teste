@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-#import matplotlib.pyplot as plt
+
 
 """
 # Análise de Geração x PLD sombra
@@ -70,6 +70,7 @@ option = st.selectbox(
 
 'You selected: ', option
 
+import matplotlib.pyplot as plt
 fig = plt.figure(figsize = (12,6))
 ax1 = fig.add_subplot(111)
 
