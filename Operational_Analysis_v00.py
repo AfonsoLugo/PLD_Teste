@@ -76,18 +76,18 @@ horario = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', 
 
 ax1.bar(horario, df_h['PLD Sombra'], label = 'PLD Sombra', color = '#B4B2B0', zorder=2)
 ax1.grid(True)
-ax1.set_ylim(0,500)
+#ax1.set_ylim(0,500)
 ax1.tick_params(labelsize = 14)
 ax1.set_ylabel('PLD [R$/MWh]', size = 14)
 ax1.legend(bbox_to_anchor=(0.25, -0.05), loc='upper center', fontsize = 12)
 
 ax2 = ax1.twinx()
 
-ax2.plot(horario, df_h[option3], linewidth=2, label = option2, zorder=3)
+ax2.plot(horario, df_h[option3], linewidth=2, label = nome, zorder=3)
 ax2.axhline(0, linestyle='--', color = 'black', zorder =3)
 ax2.grid(False)
-ax2.set_ylim(0,1)
-ax2.set_ylabel('FC', size = 14)
+#ax2.set_ylim(0,1)
+ax2.set_ylabel(option3, size = 14)
 ax2.tick_params(labelsize = 13)
 ax2.legend(bbox_to_anchor=(0.6, -0.05), loc='upper center', ncol = 3, fontsize = 12)
 plt.tight_layout()
