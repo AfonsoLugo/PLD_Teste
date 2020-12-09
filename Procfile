@@ -1,0 +1,1 @@
+web: sh setup.sh && streamlit run Operational_Analysis_v00.py
