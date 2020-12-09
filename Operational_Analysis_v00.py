@@ -44,13 +44,13 @@ option4 = st.selectbox(
     df_n.groupby('Ano').sum().reset_index()['Ano'])
 
 df_ano = df_n.set_index(['Ano', 'Mês']).groupby(level=['Ano', 'Mês']).sum().reset_index()
-
+df_ano.head()
 option5 = st.selectbox(
 'Selecione o mês',
     df_ano.groupby('Mês').sum().reset_index()['Mês'])
 
 df_h = df_n.loc[df_n['Ano'] == option4].loc[df_n['Mês'] == option5]
-
+df_h.head()
 ### PLOT DO GRÁFICO ###
 fig1 = plt.figure(figsize = (12,6))
 ax1 = fig1.add_subplot(111)
