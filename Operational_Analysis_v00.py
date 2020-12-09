@@ -83,7 +83,7 @@ ax1.legend(bbox_to_anchor=(0.25, -0.05), loc='upper center', fontsize = 12)
 
 ax2 = ax1.twinx()
 
-ax2.plot(horario, df_h[option3], linewidth=2, label = nome, zorder=3)
+ax2.plot(horario, df_h[option3], linewidth=2, label = option2, zorder=3)
 ax2.axhline(0, linestyle='--', color = 'black', zorder =3)
 ax2.grid(False)
 #ax2.set_ylim(0,1)
