@@ -21,7 +21,7 @@ Este aplicativo tem como objetivo analisar a geração de pasques eólicos e sol
 
 # Selecionar a fonte que será analisada #
 option1 = st.selectbox(
-'Selecione o tipo de usina',
+'Selecione a fonte a ser analisada',
 ['EOL', 'UFV'])
 
 # Data frame com a fonte selecionada anteriormente #
