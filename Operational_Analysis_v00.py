@@ -58,13 +58,13 @@ option3 = st.selectbox(
 'O que você quer analisar?',
     [df_n.columns[12], df_n.columns[13], df_n.columns[14], df_n.columns[16]])
 
+option3 = st.selectbox(
+'O que você quer analisar?',
+    [df_n.columns[12], df_n.columns[13], df_n.columns[14], df_n.columns[16]])
+
 option4 = st.selectbox(
 'Selecione o ano',
-    df['Ano'])
-
-option5 = st.selectbox(
-'Selecione o mês',
-    df['Mês'])
+    df_n.groupby('Mês').sum().reset_index()['Mês'])
 
 df_h = df_n.loc[df_n['Ano'] == option4].loc[df_n['Mês'] == option5]
 
