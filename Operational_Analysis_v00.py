@@ -60,7 +60,7 @@ option3 = st.selectbox(
 
 option4 = st.selectbox(
 'Selecione o ano',
-    df.groupby('Ano').sum().reset_index()['Ano'])
+    df_n.groupby('Ano').sum().reset_index()['Ano'])
 
 option5 = st.selectbox(
 'Selecione o mês',
