@@ -58,6 +58,15 @@ option3 = st.selectbox(
 'O que você quer analisar?',
     [df_n.columns[12], df_n.columns[13], df_n.columns[14], df_n.columns[16]])
 
+option4 = st.multiselect(
+'Selecione o ano',
+    df_n['Ano'])
+
+option5 = st.multiselect(
+'Selecione o mês',
+    df_n['Mês'])
+
+df_h = df_n.loc[df_n['Ano'] == option4].loc[df_n['Mês'] == option5]
 
 ### PLOT DO GRÁFICO ###
 fig1 = plt.figure(figsize = (12,6))
@@ -65,7 +74,7 @@ ax1 = fig1.add_subplot(111)
 
 horario = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24']
 
-ax1.bar(horario, df_n['PLD Sombra'], label = 'PLD Sombra', color = '#B4B2B0', zorder=2)
+ax1.bar(horario, df_h['PLD Sombra'], label = 'PLD Sombra', color = '#B4B2B0', zorder=2)
 ax1.grid(True)
 ax1.set_ylim(0,500)
 ax1.tick_params(labelsize = 14)
@@ -74,7 +83,7 @@ ax1.legend(bbox_to_anchor=(0.25, -0.05), loc='upper center', fontsize = 12)
 
 ax2 = ax1.twinx()
 
-ax2.plot(horario, df_n[option3], linewidth=2, label = nome, zorder=3)
+ax2.plot(horario, df_h[option3], linewidth=2, label = nome, zorder=3)
 ax2.axhline(0, linestyle='--', color = 'black', zorder =3)
 ax2.grid(False)
 ax2.set_ylim(0,1)
