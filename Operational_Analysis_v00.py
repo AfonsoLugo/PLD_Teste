@@ -60,11 +60,11 @@ option3 = st.selectbox(
 
 option4 = st.selectbox(
 'Selecione o ano',
-    df_n['Ano'])
+    df['Ano'])
 
 option5 = st.selectbox(
 'Selecione o mês',
-    df_n['Mês'])
+    df['Mês'])
 
 df_h = df_n.loc[df_n['Ano'] == option4].loc[df_n['Mês'] == option5]
 
