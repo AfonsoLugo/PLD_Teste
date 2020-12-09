@@ -19,14 +19,14 @@ df_raw = pd.read_csv('Projetos_Hora_201908-202008_v00.csv')
 
 df=df_raw
 
-week_s1 = week_sum.T.reset_index()
+#week_s1 = week_sum.T.reset_index()
 #week_s1 = week_s1.drop(week_s1.index[0])
 #week_s1 = week_s1.rename(columns={week_s1.columns[0]: "Type", week_s1.columns[1]: "Week 43"})
 
 
 # General Statistics
 
-st.title('General Statistics')
+st.title('Análise da Geração e do PLD')
 
 """
 From week 45 to week 48 of 2020, more than 1800 tickets were answered with an average of 455 per week and 91 tickets per day.
