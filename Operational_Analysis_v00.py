@@ -58,11 +58,11 @@ option3 = st.selectbox(
 'O que você quer analisar?',
     [df_n.columns[12], df_n.columns[13], df_n.columns[14], df_n.columns[16]])
 
-option4 = st.multiselect(
+option4 = st.selectbox(
 'Selecione o ano',
     df_n['Ano'])
 
-option5 = st.multiselect(
+option5 = st.selectbox(
 'Selecione o mês',
     df_n['Mês'])
 
