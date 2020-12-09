@@ -49,7 +49,7 @@ df_f = df.loc[df.Fonte == option1]
 # Selecionar qual usina será analisada #
 option2 = st.selectbox(
 'Selecione o nome da usina',
-df_f['Usina'])
+df_f.groupby('Usina').sum().reset_index()['Usina'])
 'Você selecionou a usina ', option2
 
 df_n = df_f.loc[df_f['Usina'] == option2]
