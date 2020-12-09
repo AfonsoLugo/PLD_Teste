@@ -4,24 +4,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
 
-st.title('Customer Service')
-"""
-This report is an analysis of the tickets answered by Afonso Lugo for the Tier 1 English and Portuguese tickets in LocalBitcoins.
-"""
-"""
-The main objective of this report is to provide insights of the problems faced by the users of LocalBitcoins platform.
-"""
-"""
-Data is collected manually and classified according to the categories in “Support types and tiers” and adapted with the experience. In this report, data is presented from November 2nd on, and only the tickets which got answered to the user are counted (close and assignments are not included). This application is planned to update once per week.
-"""
-
 df_raw = pd.read_csv('Projetos_Hora_201908-202008_v00.csv')
 
 df=df_raw
-
-#week_s1 = week_sum.T.reset_index()
-#week_s1 = week_s1.drop(week_s1.index[0])
-#week_s1 = week_s1.rename(columns={week_s1.columns[0]: "Type", week_s1.columns[1]: "Week 43"})
 
 
 # General Statistics
@@ -29,14 +14,10 @@ df=df_raw
 st.title('Análise da Geração e do PLD')
 
 """
-From week 45 to week 48 of 2020, more than 1800 tickets were answered with an average of 455 per week and 91 tickets per day.
+Este aplicativo tem como objetivo analisar a geração de pasques eólicos e solares.
 """
 
-# Analysis per Week #
-
-"""
-**Now you can analyse in details each week.**
-"""
+# Analysis per Usina #
 
 # Selecionar a fonte que será analisada #
 option1 = st.selectbox(
@@ -62,9 +43,11 @@ option4 = st.selectbox(
 'Selecione o ano',
     df_n.groupby('Ano').sum().reset_index()['Ano'])
 
+df_ano = df_n.set_index(['Ano', 'Mês']).groupby(level=['Ano', 'Mês']).sum().reset_index()
+
 option5 = st.selectbox(
 'Selecione o mês',
-    df_n.groupby('Mês').sum().reset_index()['Mês'])
+    df_ano.groupby('Mês').sum().reset_index()['Mês'])
 
 df_h = df_n.loc[df_n['Ano'] == option4].loc[df_n['Mês'] == option5]
 
