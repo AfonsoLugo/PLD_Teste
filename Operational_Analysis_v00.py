@@ -15,7 +15,7 @@ The main objective of this report is to provide insights of the problems faced b
 Data is collected manually and classified according to the categories in “Support types and tiers” and adapted with the experience. In this report, data is presented from November 2nd on, and only the tickets which got answered to the user are counted (close and assignments are not included). This application is planned to update once per week.
 """
 
-df_raw = pd.read_csv('Projetos_Hora_201908-202009_v02.csv')
+df_raw = pd.read_csv('Projetos_Hora_201908-202008_v00.csv')
 
 df=df_raw
 
